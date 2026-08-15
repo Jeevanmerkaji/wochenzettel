@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wochenzettel – Wochenplaner mit Rezepten, Einkaufsliste & Budget (Lidl, Aldi, REWE, Edeka)</title>
+<meta name="description" content="Wochenzettel erstellt deinen Wochenplan mit Rezepten, eine automatische Einkaufsliste und optimiert dein Budget – abgestimmt auf Lidl, Aldi, REWE, Edeka & Co. Jetzt für Updates anmelden." />
+<link rel="canonical" href="https://wochenzettel-1a763.web.app/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:site_name" content="Wochenzettel" />
+<meta property="og:title" content="Wochenzettel – Wochenplaner mit Rezepten, Einkaufsliste & Budget" />
+<meta property="og:description" content="KI-Wochenplaner für Lebensmittel & Budget – abgestimmt auf Lidl, Aldi, REWE, Edeka und mehr. Plus tägliche gesunde Rezepte per Newsletter." />
+<meta property="og:url" content="https://wochenzettel-1a763.web.app/" />
+<meta name="twitter:card" content="summary" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Wochenzettel",
+  "applicationCategory": "LifestyleApplication",
+  "operatingSystem": "Android",
+  "description": "KI-gestützter Wochenplaner mit Rezepten, automatischer Einkaufsliste und Budget-Optimierung für deutsche Supermärkte wie Lidl, Aldi, REWE und Edeka.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie funktioniert der Wochenzettel Wochenplaner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du gibst einmalig deine Präferenzen an – Haushaltsgröße, Wochenbudget, bevorzugten Supermarkt, Diät und Kochzeit. Wochenzettel erstellt daraus per KI einen vollständigen Wochenplan mit Rezepten und eine automatische Einkaufsliste, abzüglich dessen, was du schon im Vorrat hast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Für welche Supermärkte eignet sich Wochenzettel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wochenzettel richtet Rezepte und Preisschätzungen auf Lidl, Aldi, REWE, Edeka, Kaufland, Penny oder Netto aus – oder auf einen Mix aus allen, je nachdem, wo du einkaufst."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich meine Ernährungsweise einstellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Vegetarisch, vegan, laktosefrei, glutenfrei und kein Schweinefleisch/Halal lassen sich als Filter setzen, sodass alle vorgeschlagenen Rezepte dazu passen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann ist die Wochenzettel App verfügbar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wochenzettel befindet sich aktuell in der Testphase. Melde dich für den Newsletter an, um informiert zu werden, sobald die App im Play Store verfügbar ist."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --paper-bg: #EFEBDD;
+    --card-bg: #FBF9F2;
+    --ink-primary: #21281F;
+    --ink-muted: #5B6156;
+    --primary-green: #3C6E47;
+    --primary-green-deep: #24462D;
+    --mustard-gold: #C99A3A;
+    --hairline: #CFC8AE;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--paper-bg);
+    color: var(--ink-primary);
+    line-height: 1.6;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 24px;
+  }
+  nav .logo { font-weight: 900; font-size: 1.2rem; }
+  nav .links { display: flex; gap: 24px; }
+  nav .links a { color: var(--ink-primary); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  nav .links a:hover { color: var(--primary-green); }
+
+  header.hero {
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+  header.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    margin: 0 0 16px;
+  }
+  header.hero p.tagline {
+    color: var(--ink-muted);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 32px;
+  }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 12px;
+  }
+  .btn-primary { background: var(--primary-green); color: white; }
+  .btn-outline { background: transparent; color: var(--primary-green-deep); border: 2px solid var(--primary-green-deep); }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+  }
+  section { margin: 72px 0; }
+  section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  section p.section-sub {
+    text-align: center;
+    color: var(--ink-muted);
+    max-width: 560px;
+    margin: 0 auto 40px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid var(--hairline);
+  }
+  .card .emoji { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .card h3 { margin: 0 0 8px; color: var(--primary-green-deep); }
+  .card p { margin: 0; color: var(--ink-muted); font-size: 0.95rem; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    counter-reset: step;
+  }
+  .step {
+    text-align: center;
+    padding: 0 12px;
+  }
+  .step .num {
+    counter-increment: step;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary-green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    margin: 0 auto 12px;
+  }
+  .step .num::before { content: counter(step); }
+  .step h4 { margin: 0 0 6px; }
+  .step p { color: var(--ink-muted); font-size: 0.9rem; margin: 0; }
+
+  .faq-list { max-width: 700px; margin: 0 auto; }
+  .faq-item {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px 24px;
+    border: 1px solid var(--hairline);
+    margin-bottom: 14px;
+  }
+  .faq-item h4 { margin: 0 0 8px; color: var(--primary-green-deep); }
+  .faq-item p { margin: 0; color: var(--ink-muted); font-size: 0.95rem; }
+
+  .newsletter-box {
+    background: linear-gradient(135deg, var(--primary-green-deep), var(--primary-green));
+    border-radius: 24px;
+    padding: 48px 32px;
+    text-align: center;
+    color: white;
+  }
+  .newsletter-box h2 { color: white; }
+  .newsletter-box p.section-sub { color: rgba(255,255,255,0.85); }
+  .newsletter-box .btn-primary { background: var(--mustard-gold); color: var(--ink-primary); }
+
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--hairline);
+  }
+  footer a { color: var(--primary-green-deep); margin: 0 8px; }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="logo">🧾 Wochenzettel</div>
+    <div class="links">
+      <a href="#features">Funktionen</a>
+      <a href="#how-it-works">So funktioniert's</a>
+      <a href="#faq">FAQ</a>
+      <a href="#newsletter">Newsletter</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Wochenplan, Rezepte & Einkaufsliste – abgestimmt auf dein Budget</h1>
+    <p class="tagline">Wochenzettel plant deine Woche mit KI, erstellt automatisch deine Einkaufsliste und hält dein Budget im Blick – abgestimmt auf Lidl, Aldi, REWE, Edeka und mehr.</p>
+    <a class="btn btn-primary" href="#newsletter">Kostenlos für Updates anmelden</a>
+  </header>
+
+  <div class="container">
+    <section id="features">
+      <h2>Alles, was du für deine Woche brauchst</h2>
+      <p class="section-sub">Von der Idee bis zur Einkaufsliste – in wenigen Minuten.</p>
+      <div class="features">
+        <div class="card">
+          <span class="emoji">📅</span>
+          <h3>Wochenplan</h3>
+          <p>Ein vollständiger Essensplan für die Woche, generiert nach deinen Vorlieben, Diät und Kochzeit.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">🛒</span>
+          <h3>Einkaufsliste</h3>
+          <p>Automatisch erstellt aus deinem Plan, abzüglich dessen, was du schon im Vorrat hast.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">💶</span>
+          <h3>Budget-Optimierung</h3>
+          <p>Überschreitet dein Plan das Wochenbudget, tauscht Wochenzettel automatisch teure Rezepte gegen günstigere.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">🏠</span>
+          <h3>Vorrat</h3>
+          <p>Behalte den Überblick über das, was du bereits zuhause hast.</p>
+        </div>
+        <div class="card">
+          <span class="emoji">🌍</span>
+          <h3>Küchenvielfalt</h3>
+          <p>Wähle deine bevorzugten Küchen – Deutsch, Italienisch, Mediterran, Türkisch, Indisch, Mexikanisch, Chinesisch, Koreanisch – oder lass dich mit "Überraschungen" ab und zu von etwas Neuem verwöhnen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <h2>So funktioniert's</h2>
+      <p class="section-sub">Vier Schritte zu deinem stressfreien Wocheneinkauf.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num"></div>
+          <h4>Präferenzen angeben</h4>
+          <p>Haushaltsgröße, Budget, Supermarkt und Diät in wenigen Schritten.</p>
+        </div>
+        <div class="step">
+          <div class="num"></div>
+          <h4>Plan generieren lassen</h4>
+          <p>Die KI erstellt einen Wochenplan, passend zu deinem Budget.</p>
+        </div>
+        <div class="step">
+          <div class="num"></div>
+          <h4>Einkaufen gehen</h4>
+          <p>Die Einkaufsliste ist fertig – sortiert und ohne das, was du schon hast.</p>
+        </div>
+        <div class="step">
+          <div class="num"></div>
+          <h4>Kochen & genießen</h4>
+          <p>Schritt-für-Schritt-Rezepte auf Deutsch, für jedes Können.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>Häufige Fragen</h2>
+      <p class="section-sub">Alles, was du über den Wochenzettel-Wochenplaner wissen musst.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h4>Wie funktioniert der Wochenzettel Wochenplaner?</h4>
+          <p>Du gibst einmalig deine Präferenzen an – Haushaltsgröße, Wochenbudget, bevorzugten Supermarkt, Diät und Kochzeit. Wochenzettel erstellt daraus per KI einen vollständigen Wochenplan mit Rezepten und eine automatische Einkaufsliste, abzüglich dessen, was du schon im Vorrat hast.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Für welche Supermärkte eignet sich Wochenzettel?</h4>
+          <p>Wochenzettel richtet Rezepte und Preisschätzungen auf Lidl, Aldi, REWE, Edeka, Kaufland, Penny oder Netto aus – oder auf einen Mix aus allen, je nachdem, wo du einkaufst.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Kann ich meine Ernährungsweise einstellen?</h4>
+          <p>Ja. Vegetarisch, vegan, laktosefrei, glutenfrei und kein Schweinefleisch/Halal lassen sich als Filter setzen, sodass alle vorgeschlagenen Rezepte dazu passen.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Wann ist die Wochenzettel App verfügbar?</h4>
+          <p>Wochenzettel befindet sich aktuell in der Testphase. Melde dich für den Newsletter an, um informiert zu werden, sobald die App im Play Store verfügbar ist.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter">
+      <div class="newsletter-box">
+        <h2>Tägliche gesunde Rezepte, direkt ins Postfach</h2>
+        <p class="section-sub">Melde dich für den Wochenzettel-Newsletter an und bekomme jeden Tag ein neues, gesundes Rezept – plus Updates, wenn die App verfügbar ist.</p>
+        <a class="btn btn-primary" href="https://wochenzettel-rezepte.beehiiv.com/" target="_blank" rel="noopener">Jetzt kostenlos anmelden</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    Wochenzettel
+    <a href="privacy.html">Datenschutz</a>
+    &middot;
+    <a href="impressum.html">Impressum</a>
+    &middot;
+    <a href="mailto:jeevanms5355@gmail.com">Kontakt</a>
+  </footer>
+</body>
+</html>

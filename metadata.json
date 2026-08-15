@@ -1,0 +1,6 @@
+{
+  "name": "Wochenzettel",
+  "description": "AI-assisted meal planner and grocery app for Germany, optimizing your budget and minimizing waste.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

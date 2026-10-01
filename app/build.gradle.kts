@@ -1,4 +1,14 @@
 import com.google.gms.googleservices.GoogleServicesPlugin.MissingGoogleServicesStrategy
+import java.util.Properties
+
+// Release signing passwords: environment variables win, otherwise fall back to
+// the gitignored keystore.properties in the project root.
+val keystoreProperties = Properties().apply {
+  val file = rootProject.file("keystore.properties")
+  if (file.exists()) file.inputStream().use { load(it) }
+}
+
+fun signingSecret(name: String): String? = System.getenv(name) ?: keystoreProperties.getProperty(name)
 
 plugins {
   alias(libs.plugins.android.application)
@@ -25,11 +35,11 @@ android {
 
   signingConfigs {
     create("release") {
-      val keystorePath = System.getenv("KEYSTORE_PATH") ?: "${rootDir}/my-upload-key.jks"
+      val keystorePath = signingSecret("KEYSTORE_PATH") ?: "${rootDir}/my-upload-key.jks"
       storeFile = file(keystorePath)
-      storePassword = System.getenv("STORE_PASSWORD")
+      storePassword = signingSecret("STORE_PASSWORD")
       keyAlias = "upload"
-      keyPassword = System.getenv("KEY_PASSWORD")
+      keyPassword = signingSecret("KEY_PASSWORD")
     }
     create("debugConfig") {
       storeFile = file("${rootDir}/debug.keystore")

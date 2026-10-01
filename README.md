@@ -68,9 +68,11 @@ Release builds (`app/build.gradle.kts` → `signingConfigs.release`) expect a
 keystore, sourced from either:
 
 - `KEYSTORE_PATH`, `STORE_PASSWORD`, `KEY_PASSWORD` environment variables, or
-- a `my-upload-key.jks` file in the project root (gitignored)
+- the same keys in a `keystore.properties` file in the project root
+  (gitignored), used when the environment variable is not set
 
-with key alias `upload`. Generate your own keystore if you don't have one:
+The keystore defaults to a `my-upload-key.jks` file in the project root
+(gitignored) when `KEYSTORE_PATH` is not given, with key alias `upload`. Generate your own keystore if you don't have one:
 
 ```bash
 keytool -genkey -v -keystore my-upload-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
